@@ -90,14 +90,20 @@ function acDisplay() {
 }
 
 function dellDisplay() {
+    if (currentNumber === "0") {
+        return;
+    }
     currentNumber = currentNumber.slice(0, -1);
+
+    if(currentNumber === "" || currentNumber ==="-"){
+        currentNumber = "0";
+    }
     updateDisplay();
 }
 
 function percentage() {
 
     if (currentNumber === "Error") return;
-
     currentNumber = String(Number(currentNumber) / 100);
 
     updateDisplay();
